@@ -10,7 +10,7 @@ while summ < 5:
         if x == a:
             print("ur input is %s and it is a float." % (x))
 
-        elif x != a:
+        else:
             print("ur input is {} and it is a integer.".format(x))
 
         summ += 1

@@ -11,7 +11,7 @@ while summ < 5:
             print("ur input is %s and it is a float." % (x))
 
         else:
-            print("ur input is {} and it is a integer.".format(x))
+            print("ur input is {} and it is an integer.".format(x))
 
         summ += 1
         break

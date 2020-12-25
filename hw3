@@ -1,0 +1,49 @@
+"""
+RULES
+A simplified model for the spread of a rumor goes this way: There are
+N=20 people in a group of friends, of which some have heard of the
+rumor and the others have not. During any single period of time, two
+persons are selected at random from the group and assumed to
+interact. If one of these persons has heard the rumor and the other
+has not, then with a probability 0.15, the rumor is transmitted.
+Assuming that this process begins at time t=0 with a single person
+knowing the rumor and the first interaction occurs at time t=1, run
+the system for 200 times to find average time that it takes for
+everyone to hear the rumor.
+"""
+import random
+
+def name(a):
+    print("hi",a,"!!")
+ask_name = input("enter ur name:")
+name(ask_name)
+
+probablity = int(input("what percentage should the probability ratio be? :"))
+
+times_list = []
+for s in range(0, 200):
+    people = 1
+    times = 0
+    for i in range(0, 200):
+        x = random.randint(1, 100)
+        if people < 20:
+            if x <= probablity:
+                people += 1
+                times += 1
+            else:
+                times += 1
+
+        elif people >= 20:
+            break
+    times_list.append(times)
+
+for k in times_list:
+    summ = 0
+    for i in range(0,len(times_list)):
+        summ += times_list[i]
+        average = summ/len(times_list)
+#print(len(times_list))
+print("average time that it takes for everyone to hear the rumor:")
+print(average)
+
+print("\n----simulation over!----")
